@@ -72,3 +72,6 @@ The goal of this project is to demonstrate the implementation of a real-world fu
 ## 🔐 Environment Variables
 
 ### On Client (`.env`):
+
+
+
