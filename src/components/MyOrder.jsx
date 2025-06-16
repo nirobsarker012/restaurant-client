@@ -5,11 +5,14 @@ import MyOrder_List from "./MyOrder_List";
 import { IoBagAdd } from "react-icons/io5";
 import {Link} from 'react-router'
 import axios from "axios";
+import useAuth from "../hooks/useAuth";
 
 const MyOrder = () => {
+  const {user, loading} = useAuth();
+  // console.log(`Token int the context`, user.accessToken);
   const [orderData, setOrderData] = useState([]);
   useEffect(() => {
-    axios(`${import.meta.env.VITE_API_URL}my-orders`).then(data=>
+    axios(`${import.meta.env.VITE_API_URL}my-orders?email=${user?.email}`).then(data=>
     {
       setOrderData(data?.data)
     }
@@ -18,11 +21,14 @@ const MyOrder = () => {
       console.log(err);
     }
     )
-  }, []);
+  }, [user?.email]);
   // Handle remove data form the ui
   const handleRemoveFromUI = (id) => {
     setOrderData((prev) => prev.filter((order) => order._id !== id));
   };
+
+  if(loading) return <h1>Loading data.....</h1>
+
   return (
     <div>
       <div className="flex flex-col items-center justify-center bg-[#fef0e7] py-16">

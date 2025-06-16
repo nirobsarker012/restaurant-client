@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { CiEdit } from "react-icons/ci";
+import useAuth from "../hooks/useAuth";
 
 const MyFoodPage = () => {
+  const {user} = useAuth()
   const [foodsData, setFoodsData] = useState([]);
+
   const badgeColors = {
     Seafood: "bg-orange-100 text-orange-700",
     Meat: "bg-red-100 text-red-700",
@@ -12,7 +15,7 @@ const MyFoodPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responsive = await fetch(`${import.meta.env.VITE_API_URL}/add-foods`);
+        const responsive = await fetch(`${import.meta.env.VITE_API_URL}add-foods?email=${user.email}`);
         if (!responsive.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -23,7 +26,8 @@ const MyFoodPage = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [user?.email]);
+  
   console.log(foodsData);
   return (
     <section className="font-plus">

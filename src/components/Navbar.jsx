@@ -95,7 +95,7 @@ const Navbar = () => {
           {user ? (
             <>
               <div className="bg-gray-400 w-[40px] h-[40px] flex items-center justify-center rounded-full  text-white font-semibold">
-                <span>{user.displayName.charAt(0)}</span>
+                {/* <span>{user.displayName.charAt(0)}</span> */}
               </div>
               <button
                 onClick={handleLogout}
