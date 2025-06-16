@@ -15,7 +15,7 @@ const MyOrder = () => {
     axios(`${import.meta.env.VITE_API_URL}my-orders?email=${user?.email}`,
       {
         headers:{
-          authorization : `Bearer ${user?.email}`
+          authorization : `Bearer ${user?.accessToken}`
         }
       }
     ).then(data=>
@@ -27,7 +27,8 @@ const MyOrder = () => {
       console.log(err);
     }
     )
-  }, [user?.email]);
+  }, [user]);
+  console.log(orderData);
   // Handle remove data form the ui
   const handleRemoveFromUI = (id) => {
     setOrderData((prev) => prev.filter((order) => order._id !== id));

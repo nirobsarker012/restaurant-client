@@ -61,7 +61,13 @@ const FoodPurchase = () => {
     console.log(newData);
 
     // Add data to the server
-    axios.post(`${import.meta.env.VITE_API_URL}my-orders`, newData).then((res)=>{
+    axios.post(`${import.meta.env.VITE_API_URL}my-orders?email=${user?.email}`, newData,
+      {
+        headers:{
+          authorization : `Bearer ${user?.accessToken}`
+        }
+      }
+    ).then((res)=>{
       if(res.data)
       {
         navigate('/my-order');
