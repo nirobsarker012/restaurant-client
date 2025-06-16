@@ -15,7 +15,13 @@ const MyFoodPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responsive = await fetch(`${import.meta.env.VITE_API_URL}add-foods?email=${user.email}`);
+        const responsive = await fetch(`${import.meta.env.VITE_API_URL}add-foods?email=${user.email}`,
+          {
+            headers:{
+              authorization: `Bearer ${user.accessToken}`
+            }
+          }
+        );
         if (!responsive.ok) {
           throw new Error("Failed to fetch data");
         }

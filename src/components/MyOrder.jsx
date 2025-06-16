@@ -12,7 +12,13 @@ const MyOrder = () => {
   // console.log(`Token int the context`, user.accessToken);
   const [orderData, setOrderData] = useState([]);
   useEffect(() => {
-    axios(`${import.meta.env.VITE_API_URL}my-orders?email=${user?.email}`).then(data=>
+    axios(`${import.meta.env.VITE_API_URL}my-orders?email=${user?.email}`,
+      {
+        headers:{
+          authorization : `Bearer ${user?.email}`
+        }
+      }
+    ).then(data=>
     {
       setOrderData(data?.data)
     }
