@@ -99,19 +99,22 @@ const Navbar = () => {
               </div>
               <button
                 onClick={handleLogout}
-                className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
+                className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition cursor-pointer"
               >
                 Logout
               </button>
             </>
           ) : (
             <>
-              <NavLink to="/auth-form" className="hover:underline">
+              <NavLink
+                to="/auth-form"
+                className="hover:underline cursor-pointer"
+              >
                 Register
               </NavLink>
               <NavLink
                 to="/auth-form"
-                className="bg-gradient-to-r from-orange-500 to-red-500 py-2 px-4 rounded-[5px] transition-all duration-300 hover:-translate-y-0.5 text-white"
+                className="bg-gradient-to-r from-orange-500 to-red-500 py-2 px-4 rounded-[5px] transition-all duration-300 hover:-translate-y-0.5 text-white cursor-pointer"
               >
                 Sign in
               </NavLink>
