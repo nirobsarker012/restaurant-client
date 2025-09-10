@@ -1,7 +1,7 @@
 import React from "react";
 import { CiClock2, CiDeliveryTruck } from "react-icons/ci";
 import { LuLeaf } from "react-icons/lu";
-import {motion} from 'motion/react';
+import { motion } from "motion/react";
 import { fedup } from "./Banner";
 
 const serviceList = [
@@ -34,17 +34,19 @@ const Service = () => {
       {/* Heading */}
       <div className="text-center mb-12">
         <motion.h2
-                  variants={fedup(0.4)}
+          variants={fedup(0.4)}
           initial="hidden"
           whileInView="show"
-        className="font-bold text-3xl md:text-4xl lg:text-5xl mb-2.5">
+          className="font-bold text-3xl md:text-4xl lg:text-5xl mb-2.5"
+        >
           Our Services
         </motion.h2>
         <motion.p
           variants={fedup(0.6)}
           initial="hidden"
           whileInView="show"
-        className="text-gray-500 text-sm md:text-base">
+          className="text-gray-500 text-sm md:text-base"
+        >
           We provide exceptional services to enhance your dining experiences
         </motion.p>
       </div>
@@ -52,11 +54,18 @@ const Service = () => {
       {/* Services Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
         {serviceList.map((item) => (
-          <div key={item.id} className="flex flex-col items-center hover:-translate-y-1.5 transition-all duration-300">
-            <div className={`w-14 h-14 flex items-center justify-center rounded-xl mb-4 ${item.bgColor}`}>
+          <div
+            key={item.id}
+            className="flex flex-col items-center hover:-translate-y-1.5 transition-all duration-300"
+          >
+            <div
+              className={`w-14 h-14 flex items-center justify-center rounded-xl mb-4 ${item.bgColor}`}
+            >
               {item.icon}
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 hover:text-orange-700/80">{item.title}</h3>
+            <h3 className="text-lg font-semibold text-gray-900">
+              {item.title}
+            </h3>
             <p className="text-gray-500 text-sm mt-1">{item.description}</p>
           </div>
         ))}

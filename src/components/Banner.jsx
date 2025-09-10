@@ -26,7 +26,7 @@ export default function Banner() {
   const swiperRef = useRef(null);
 
   return (
-    <div className="relative my-10">
+    <div className="relative mb-10">
       {/* Custom Navigation Buttons */}
       <button
         onClick={() => swiperRef.current?.slidePrev()}
@@ -84,7 +84,8 @@ export default function Banner() {
               </motion.span>
             </motion.h2>
             <p className="mb-4 text-white/80 max-w-2xl text-sm sm:text-base md:text-lg pop">
-              Experience culinary excellence with our carefully crafted dishes made from the finest ingredients by world-class chefs
+              Experience culinary excellence with our carefully crafted dishes
+              made from the finest ingredients by world-class chefs
             </p>
             <div className="flex items-center gap-2.5">
               <Link
@@ -139,10 +140,16 @@ export default function Banner() {
               Dine in a space designed for comfort and elegance...
             </p>
             <div className="flex items-center gap-2.5">
-              <Link to={"all-foods"} className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-3 rounded-[10px] text-sm sm:text-base inline-flex items-center gap-2 cursor-pointer">
+              <Link
+                to={"all-foods"}
+                className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-3 rounded-[10px] text-sm sm:text-base inline-flex items-center gap-2 cursor-pointer"
+              >
                 See All Foods <FaArrowRightLong />
               </Link>
-              <Link to={"/gallery"} className="bg-white/10 backdrop-blur-md border border-white px-4 py-3 rounded-[10px] cursor-pointer">
+              <Link
+                to={"/gallery"}
+                className="bg-white/10 backdrop-blur-md border border-white px-4 py-3 rounded-[10px] cursor-pointer"
+              >
                 View Gallery
               </Link>
             </div>
@@ -182,13 +189,20 @@ export default function Banner() {
               </motion.span>
             </motion.h2>
             <p className="mb-4 text-white/80 max-w-2xl text-sm sm:text-base md:text-lg pop">
-              Led by renowned chefs, our kitchen is where expertise meets artistry...
+              Led by renowned chefs, our kitchen is where expertise meets
+              artistry...
             </p>
             <div className="flex items-center gap-2.5">
-              <Link to={"all-foods"} className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-3 rounded-[10px] text-sm sm:text-base inline-flex items-center gap-2 cursor-pointer">
+              <Link
+                to={"all-foods"}
+                className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-3 rounded-[10px] text-sm sm:text-base inline-flex items-center gap-2 cursor-pointer"
+              >
                 See All Foods <FaArrowRightLong />
               </Link>
-              <Link to={"/gallery"} className="bg-white/10 backdrop-blur-md border border-white px-4 py-3 rounded-[10px] cursor-pointer">
+              <Link
+                to={"/gallery"}
+                className="bg-white/10 backdrop-blur-md border border-white px-4 py-3 rounded-[10px] cursor-pointer"
+              >
                 View Gallery
               </Link>
             </div>

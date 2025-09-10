@@ -46,7 +46,7 @@ const Login = () => {
         console.error(err);
         toast.error("Google login failed.");
       });
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 font-plus">
@@ -76,22 +76,11 @@ const Login = () => {
         {loading ? "Loading..." : "Sign In"}
       </button>
       <button
-      onClick={handleGoogleLogin}
-      className="w-full inline-flex gap-1.5 text-[16px] items-center justify-center border border-gray-400 py-2 rounded-[5px] hover:text-blue-600 transition-all duration-200 cursor-pointer">
+        onClick={handleGoogleLogin}
+        className="w-full inline-flex gap-1.5 text-[16px] items-center justify-center border border-gray-400 py-2 rounded-[5px] hover:text-blue-600 transition-all duration-200 cursor-pointer"
+      >
         Sign with Google <FcGoogle />
       </button>
-      <div className="mt-4 p-3 text-sm bg-blue-50 text-blue-700 rounded-lg border border-blue-200">
-        <p className="font-medium">Demo Account Available:</p>
-        <p>
-          <strong>Email:</strong> user@example.com
-        </p>
-        <p>
-          <strong>Password:</strong> password
-        </p>
-        <p className="mt-1">
-          Or register a new account and login with those credentials!
-        </p>
-      </div>
     </form>
   );
 };
